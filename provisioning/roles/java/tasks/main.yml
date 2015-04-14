@@ -1,0 +1,11 @@
+- name: "add ppa repository for java"
+  apt_repository: repo='ppa:webupd8team/java' state='present'
+
+- name: "update apt cache"
+  apt: update_cache='yes'
+
+- name: "accept oracle license"
+  debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+
+- name: "install java"
+  apt: name='oracle-java8-installer'

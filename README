@@ -1,0 +1,6 @@
+With vagrant and ansible starts zookeeper in two nodes
+
+java application using curator for making another leader
+
+you must download zookeeper-3.4.6.tar.gz before starting vagrant
+you also must install needed lxc vagrant box

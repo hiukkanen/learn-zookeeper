@@ -1,0 +1,6 @@
+- hosts: zoos
+  sudo: yes
+
+  roles:
+    - { role: java, tags: [java] }
+    - zookeeper

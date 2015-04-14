@@ -1,0 +1,7 @@
+- template: src=zoo.cfg.j2 dest=/home/vagrant/zookeeper/conf/zoo.cfg
+
+- template: src=myid.j2 dest=/home/vagrant/.zookeeper/myid
+
+- template: src=zookeeper.j2 dest=/etc/init.d/zookeeper mode=0744
+
+- service: name=zookeeper state=started
