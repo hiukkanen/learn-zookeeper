@@ -4,3 +4,4 @@
   roles:
     - { role: java, tags: [java] }
     - zookeeper
+    - zookeeper-test-app
