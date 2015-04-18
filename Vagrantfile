@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
     ansible.playbook = "provisioning/playbook.yml"
 
     ansible.groups = {
-      "zoos" => ["master", "slave"]
+      "zoos" => ["master", "slave", "servant"]
     }
 
     ansible.skip_tags = ENV['SKIP_TAGS']
@@ -17,10 +17,17 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "master" do |master|
     master.vm.box = "vagrant-lxc-trusty-i386"
+    master.vm.hostname = "master"
   end
 
   config.vm.define "slave" do |slave|
     slave.vm.box = "vagrant-lxc-trusty-i386"
+    slave.vm.hostname = "slave"
+  end
+
+  config.vm.define "servant" do |slave|
+    slave.vm.box = "vagrant-lxc-trusty-i386"
+    slave.vm.hostname = "servant"
   end
 
   # Disable automatic box update checking. If you disable this, then
